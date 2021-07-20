@@ -1,6 +1,6 @@
 # ClearRedisCache
 
-a node.js to clear redis cache using http protocol
+a node.js project to clear redis cache using express framework
 
 ## Install
 
