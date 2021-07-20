@@ -1,4 +1,6 @@
-# ClearingCacheRedis
+# ClearRedisCache
+
+a node.js to clear redis cache using http protocol
 
 ## Install
 
