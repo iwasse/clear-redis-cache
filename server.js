@@ -5,10 +5,10 @@ require('dotenv').config()
 
 
 app.get('/', (req, res) => {
-    res.json({'Message': 'conectado'})
+    res.json({'Message': 'conected'})
 })
 
-app.get('/api/financings/clear-cache', (req, res) => {
+app.get('/api/financings/clear', (req, res) => {
         const client = redis.createClient({
             host: process.env.HOST_FINANCINGS,
             port: process.env.REDIS_PORT_FINANCINGS,
@@ -38,7 +38,7 @@ app.get('/api/financings/clear-cache', (req, res) => {
 })
 
 
-app.get('/api/loans/clear-cache', (req, res) => {
+app.get('/api/loans/clear', (req, res) => {
         const client = redis.createClient({
             host: process.env.HOST_LOANS,
             port: process.env.REDIS_PORT_LOANS,
@@ -68,7 +68,7 @@ app.get('/api/loans/clear-cache', (req, res) => {
 })
 
 
-app.get('/api/unarranged-accounts-overdraft/clear-cache', (req, res) => {
+app.get('/api/unarranged-accounts-overdraft/clear', (req, res) => {
         const client = redis.createClient({
             host: process.env.HOST_UNARRANGED,
             port: process.env.REDIS_PORT_UNARRANGED,
@@ -96,6 +96,36 @@ app.get('/api/unarranged-accounts-overdraft/clear-cache', (req, res) => {
         client.quit()
     
 })
+
+app.get('/api/consents/clear', (req, res) => {
+    const client = redis.createClient({
+        host: process.env.HOST_CONSENTS,
+        port: process.env.REDIS_PORT_CONSENTS,
+        password: process.env.REDIS_PASSWORD_CONSENTS,
+        tls: true
+    })
+    
+    client.flushdb(function(err, success){
+        if(success){
+            console.log("Consents - flushdb: " + success)
+            res.send({
+                'cache': 'Consents',
+                'message': 'Successfully cleared cache',
+                'status': success
+            })
+        }
+        else
+        console.log('Error ' + err)
+    })
+     
+    client.on('error', err => {
+        console.log('Error ' + err);
+    });
+    
+    client.quit()
+
+})
+
 
 const port = process.env.PORT
 app.listen(port, () =>{
