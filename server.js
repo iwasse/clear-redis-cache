@@ -1,6 +1,6 @@
 const redis = require('redis');
 const express = require("express");
-const clear = require('./clearCache');
+const clear = require('./api/clearCache');
 const app = express();
 require('dotenv').config();
 

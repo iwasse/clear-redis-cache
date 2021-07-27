@@ -13,10 +13,10 @@ exports.clearCache = (target) => {
 
         cli.on('connect', () => {
             console.log("Connected to redis: " + target)
-            cli.flushdb( (success) => {
-                console.log("Cache cleared: "+success)
+            cli.flushdb( (err, success) => {
+                console.log("Cache cleared: " + success)
             })
-            cli.quit()    
+            cli.quit()
         })
 
         cli.on('error', (error) => {
