@@ -12,7 +12,7 @@ create a file in root directory of project named "config.json"
 
 example:  
 {  
-  "default": "<url>"  
+  "default": "url"
 }
   
 url format: [redis[s]:]//[[user][:password@]][host][:port][/db-number][?db=db-number[&password=bar[&option=value]]]  
