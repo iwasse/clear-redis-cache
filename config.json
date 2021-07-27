@@ -1,5 +1,0 @@
-{
-    "default": "redis://localhost:6379/?db=1?password=123",
-    "financings": "redis://cachefinanciamentodes.redis.cache.windows.net:6380?password=xXOr7czOM6BvmWnufinrYHLW2A61wJnpTdvX6QtCEGY=",
-    "loans": "redis://cachecemprestimodes.redis.cache.windows.net:6380?password=Sa6k6oeFzX5scL1U1lrtVcB8ycfQhH68Am6M7BdvQ84="
-}
