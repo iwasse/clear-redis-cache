@@ -1,4 +1,3 @@
-const redis = require('redis');
 const express = require("express");
 const clear = require('./api/clearCache');
 const app = express();
