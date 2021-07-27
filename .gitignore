@@ -1,8 +1,4 @@
-#ENVIROMENT_VARIABLES
 .env
-
-#IGNORES FILES
 api/promisesLab.js
 config.json
-
 node_modules/
