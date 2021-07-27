@@ -22,7 +22,6 @@ then localhost:3000/api/clear/default will clear cache of that redis server
 ## Start Server
 
 *npm start*  
-  
-## Usage
+ 
  
 
