@@ -13,17 +13,17 @@ create a file in root directory of project named "config.json"
 **example:** 
 ```
 {  
-  "default": "url"  
+  "endpoint": "redis://alice:foobared@awesome.redis.server:6380"  
 }
 ``` 
   
 **url format:** `[redis[s]:]//[[user][:password@]][host][:port][/db-number][?db=db-number[&password=bar[&option=value]]]` 
 
-then localhost:3000/api/clear/`default` will clear cache of that redis server
+**path:** `/api/clear`
 
 ## Start Server
 
-*npm start*  
+*npm start*  (default port 3000)
  
  
 
