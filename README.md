@@ -1,4 +1,4 @@
-# ClearRedisCache
+# clear-redis-cache
 
 a node.js project to clear redis cache using express framework
 
